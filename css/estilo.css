@@ -1,0 +1,161 @@
+body{
+   margin: 10px;
+}
+
+header{
+    margin-bottom: 20px;
+}
+.encabezado{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(left, #07509A, #FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #07509A, #FFFFFF); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #07509A, #FFFFFF); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, #07509A, #FFFFFF); /* Standard syntax */
+    background-size: 800px 32px;
+    background-repeat: no-repeat;
+}
+#barra{
+    color: #003366;
+    font-size: 34px;
+    text-align: right;
+    font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';;
+}
+
+#fac{
+    color: #003366;
+    font-size: 40px;
+    line-height: 0.8;
+    text-align: center;
+    font-family: 'Segoe UI Light', 'Helvetica Neue', 'Segoe UI', Arial, 'Gill Sans', 'Gill Sans Light';
+    margin: 20px;
+}
+#fac a{
+    background-image: url("../img/boton-back.png");
+    background-repeat: no-repeat;
+    border-bottom-style: none;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(255, 255, 255);
+    border-left-style: none;
+    border-right-color: rgb(255, 255, 255);
+    border-right-style: none;
+    border-top-color: rgb(255, 255, 255);
+    border-top-style: none;
+    color: rgb(255, 255, 255);
+    cursor: auto;
+    display: block;
+    font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';
+    font-size: 1px;
+    height: 31.9886360168457px;
+    line-height: 1.20454549789429px;
+    text-decoration: none;
+    text-indent: -1000px;
+    width: 31.9886360168457px;
+}
+
+nav{
+    background:#EBF4FA;
+    overflow:hidden;
+    padding:10px;
+    margin: 20px 0px 20px 0px;
+}
+nav ul{
+    list-style:none;
+    margin:0 10px 0 10px;
+    padding:0;
+}
+nav ul li{
+    /*Bordes redondeados*/
+    float:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    margin-right:10px;
+    text-align:center;
+    /*Sombras para texto, los mismos parametros que box-shadow*/
+    text-shadow: 0px 1px 0px #000;
+}
+
+nav ul li:hover{
+    /*Sombras*/
+    -webkit-box-shadow:  1px -1px 0px #999;/*Chrome y Safari*/
+    -moz-box-shadow:  1px -1px 0px #999;/*Firefox*/
+    -o-box-shadow:  1px -1px 0px #999;/*Opera*/
+    box-shadow:  1px -1px 0px #999;/*Estandar por defecto*/
+    border:2px #E3E3E3;
+    text-shadow: 0px 1px 0px #FFF;
+}
+nav ul li a{
+    display:block;
+    padding:10px;
+    text-decoration:none;
+    /*Transiciones*/
+    -webkit-transition: 0.4s linear all;
+    -moz-transition: 0.4s linear all;
+    -o-transition: 0.4s linear all;
+    transition: 0.4s linear all;
+    color: #FFFFFF;
+}
+
+nav ul li .uno{
+    background:#3DB1B1;
+}
+
+nav ul li .dos{
+    background:#006699;
+}
+nav ul li .tres{
+    background:#063;
+}
+
+nav ul li a:hover {
+    color:#000;
+}
+
+article{
+    margin: 20px auto;
+    font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';
+}
+
+article #formulario table{
+    border:#063 3px solid;
+}
+
+.campos, textarea{
+	background:#eee;
+	border:0;
+	margin-top:1px;
+	margin-bottom:1px;
+	padding:10px;
+	width:200px;
+        color:#4e8af3;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-o-border-radius:3px;
+	border-radius:3px;
+}
+
+.campos:focus, textarea:focus{ /*darle efecto a los campos de formulario sombra y color*/
+	background:#fff;
+	outline: none;
+	-webkit-box-shadow:0 0 10px #24607f;
+	-moz-box-shadow:0 0 10px #24607f;
+	-o-box-shadow:0 0 10px #24607f;
+	box-shadow:0 0 10px #24607f;
+}
+
+article #formulario .boton{
+    background:#063;
+    border:0;
+    color:#fff;
+    margin-left:50px;
+    padding:10px;
+    width:150px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+}
