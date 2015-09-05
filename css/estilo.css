@@ -1,9 +1,13 @@
 body{
-   margin: 10px;
+    margin: 10px;
 }
 
 header{
     margin-bottom: 20px;
+}
+#sesion{
+    text-align: right;
+    font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';
 }
 .encabezado{
     margin-top: 20px;
@@ -19,7 +23,7 @@ header{
     color: #003366;
     font-size: 34px;
     text-align: right;
-    font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';;
+    font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';
 }
 
 #fac{
@@ -125,29 +129,44 @@ article #formulario table{
 }
 
 .campos, textarea{
-	background:#eee;
-	border:0;
-	margin-top:1px;
-	margin-bottom:1px;
-	padding:10px;
-	width:200px;
-        color:#4e8af3;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	-o-border-radius:3px;
-	border-radius:3px;
+    background:#eee;
+    border:0;
+    margin-top:1px;
+    margin-bottom:1px;
+    padding:10px;
+    width:200px;
+    color:#4e8af3;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
 }
 
 .campos:focus, textarea:focus{ /*darle efecto a los campos de formulario sombra y color*/
-	background:#fff;
-	outline: none;
-	-webkit-box-shadow:0 0 10px #24607f;
-	-moz-box-shadow:0 0 10px #24607f;
-	-o-box-shadow:0 0 10px #24607f;
-	box-shadow:0 0 10px #24607f;
+    background:#fff;
+    outline: none;
+    -webkit-box-shadow:0 0 10px #24607f;
+    -moz-box-shadow:0 0 10px #24607f;
+    -o-box-shadow:0 0 10px #24607f;
+    box-shadow:0 0 10px #24607f;
 }
 
 article #formulario .boton{
+    background:#063;
+    border:0;
+    color:#fff;
+    margin-left:50px;
+    padding:10px;
+    width:150px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+}
+article #formulario1{
+    margin-left: 20%;
+}
+article #formulario1 .boton{
     background:#063;
     border:0;
     color:#fff;
