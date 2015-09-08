@@ -1,13 +1,14 @@
 <?php
      session_start();
     include ("../procesos/conexion.php");
-    if(isset($_SESSION['usuario'])){
+    if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
 ?>
 <!DOCTYPE>
 <html>
     <head>
         <link rel="stylesheet" href="../css/estilo.css" />
         <meta charset="UTF-8">
+        <link rel="shortcut icon" href="http://www.uv.mx/favicon.ico" type="image/x-icon" />
         <title>-Administrador- UV</title>
     </head>
     <body>
@@ -17,12 +18,15 @@
             </section>
             <div id="sesion"><p>Ha iniciado sesión: <?php echo $_SESSION['usuario']; ?>.<br><a href="../procesos/logout.php">Cerrar Sesión.</a></p></div>
                 <div id="fac">
-                    <a href="" id="regresar" href="../vistasAdmin/administrador.php"></a>Gestión de Asignación de Aulas.</div>
+                    <a href="" id="regresar" href="vistasAdmin/administrador.php"></a>Gestión de Asignación de Aulas.</div>
             <nav>
                 <ul>
                     <li><a class="uno" title="seg" href="../vistasGen/seguridad.php">Seguridad</a></li>
-                    <li><a class="dos" title="aulas" href="">Asignacion de Aulas</a></li>
-                    <li><a class="tres" title="" href="">Horarios Docentes</a></li>
+                    <li><a class="dos" title="aulas" href="">Gestion de recursos y mobiliario</a></li>
+                    <li><a class="tres" title="asignaturas" href="">Gestion de asignaturas</a></li>
+                    <li><a class="cuatro" title=mestros" href="">Gestion de Catedráticos</a></li>
+                    <li><a class="cinco" title="horarios" href="">Gestion de horarios</a></li>
+                    <li><a class="seis" title="usuarios" href="">Gestion de usuarios</a></li>
                 </ul>
             </nav> 
         </header>
@@ -38,6 +42,6 @@
 <?php
 }
     else{
+        echo '<script> alert("Acceso denegado. Debe iniciar sesión."); </script>';
         echo '<script> window.location = "../index.php"; </script>';
     }
-?>

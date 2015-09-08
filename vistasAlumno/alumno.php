@@ -1,7 +1,8 @@
 <?php
     session_start();
     include ("../procesos/conexion.php");
-    if(isset($_SESSION['usuario'])){
+    if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 3){
+
 ?>
 <!DOCTYPE>
 <html>

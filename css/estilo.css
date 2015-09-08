@@ -105,13 +105,22 @@ nav ul li a{
 }
 
 nav ul li .uno{
-    background:#3DB1B1;
+    background:#0150A0;
 }
 
 nav ul li .dos{
-    background:#006699;
+    background:#069;
 }
 nav ul li .tres{
+    background:#099;
+}
+nav ul li .cuatro{
+    background:#396;
+}
+nav ul li .cinco{
+    background:#093;
+}
+nav ul li .seis{
     background:#063;
 }
 
