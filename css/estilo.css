@@ -175,7 +175,8 @@ article #formulario .boton{
 article #formulario1{
     margin-left: 20%;
 }
-article #formulario1 .boton{
+
+.boton{
     background:#063;
     border:0;
     color:#fff;
@@ -186,4 +187,77 @@ article #formulario1 .boton{
     -moz-border-radius:3px;
     -o-border-radius:3px;
     border-radius:3px; 
+}
+/*Tabla de gestion de recursos*/
+
+.botonv{
+    background:#EBF4FA;
+    border:0;
+    color:#000;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px; 
+}
+
+.gestion{
+    background:#063;
+    border:0;
+    color:#fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px; 
+    width: 25px;
+}
+
+article #tabla {
+    border-collapse: separate;
+    border: #EBF4FA 1px solid;
+}
+article #tabla th{
+    background: #EBF4FA;
+    width: 177px;
+}
+
+article #tabla td{
+    padding: 5px;
+}
+
+article #tabla tr, td{
+    border: #EBF4FA 1px solid;
+}
+
+.imgbuscar{
+    width: 25px;
+    height: 25px;
+    margin-left: 29%;
+    margin-top:1px;
+    margin-bottom:1px;
+}
+
+.buscar{
+    background:#eee;
+    border:0;
+    margin-top:1px;
+    margin-bottom:1px;
+    margin-left: 5px;
+    padding:10px;
+    width:400px;
+    color:#4e8af3;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
+}
+
+.camposG{
+    background:#eee;
+    border:0;
+    padding:10px;
+    color:#4e8af3;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px;
 }

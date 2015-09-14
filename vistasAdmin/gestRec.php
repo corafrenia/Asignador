@@ -37,7 +37,7 @@
             </nav> 
         </header>
         <article>
-            <div>Buscar: <input type="search" value="Buscar..." name="buscar" /></div>
+            <div><form method="post" action="../procesos/buscaRegRec.php"><img class="imgbuscar" src="../img/buscar.png" /><input type="search" value="Buscar..." name="buscar" class="buscar" /></form></div>
             <table id="tabla">
                 <tr>
                 <form method="post">
@@ -68,14 +68,8 @@
                     <td><input type="submit" name="eliminar" class="gestion" value="-" title="Eliminar Registro" onclick="return confirm('¿Esta seguro de querer eliminar este registro?');"/></td>
                 </form>
                 </tr>
-                <tr>
-                    <td></td> <td></td> <td></td> 
-                    <td></td> 
-                    <td></td> <td></td> <td></td> <td></td>
-                </tr>
              <?php
                     }
-                }else{
                     
                 }
                     ?>
