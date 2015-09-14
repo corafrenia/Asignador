@@ -1,12 +1,15 @@
 <?php
     session_start();
-    if(isset($_SESSION['usuario'])){
+    include ("../procesos/conexion.php");
+    if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Validando</title>
+        <link rel="stylesheet" href="../css/estilo.css" />
         <meta charset="utf-8">
+        <link rel="shortcut icon" href="http://www.uv.mx/favicon.ico" type="image/x-icon"/>
+        <title>Validando</title>
     </head>
     <body>
         <?php 

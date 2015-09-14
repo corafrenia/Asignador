@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <link rel="stylesheet" href="css/estilo.css" />
         <meta charset="UTF-8">
+        <link rel="shortcut icon" href="http://www.uv.mx/favicon.ico" type="image/x-icon" />
         <title>Asignacion de aulas - UV</title>
         
     </head>

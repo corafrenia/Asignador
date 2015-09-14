@@ -22,7 +22,7 @@
             <nav>
                 <ul>
                     <li><a class="uno" title="seg" href="../vistasGen/seguridad.php">Seguridad</a></li>
-                    <li><a class="dos" title="aulas" href="">Gestion de recursos y mobiliario</a></li>
+                    <li><a class="dos" title="aulas" href="../vistasAdmin/gestRec.php">Gestion de recursos y mobiliario</a></li>
                     <li><a class="tres" title="asignaturas" href="">Gestion de asignaturas</a></li>
                     <li><a class="cuatro" title=mestros" href="">Gestion de Catedráticos</a></li>
                     <li><a class="cinco" title="horarios" href="">Gestion de horarios</a></li>
@@ -44,4 +44,4 @@
     else{
         echo '<script> alert("Acceso denegado. Debe iniciar sesión."); </script>';
         echo '<script> window.location = "../index.php"; </script>';
-    }
+    } 
