@@ -8,6 +8,6 @@ include("/conexion.php");
         
         mysqli_query($connect, "INSERT INTO asignaturas (`id`, `clave`, `asignatura`, `inscritos`) VALUES  (NULL, '$clave', '$asig', '$ins')") or die ("problemas al insertar datos");
         echo '<script> alert("Registro almacenado correctamente."); </script>';
-        echo '<script> window.location = "../vistasAdmin/gestAsig.php?num=1&buscar= "; </script>';
+        echo '<script> window.location = "../vistasAdmin/gestAsig.php?numA=1&buscarA= "; </script>';
     }
 ?>

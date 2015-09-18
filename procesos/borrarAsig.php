@@ -7,7 +7,7 @@ if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
             $id= $_GET['id'];
             $delete = "DELETE FROM asignaturas WHERE id = '".$id."'";
             mysqli_query($connect, $delete);
-            header("Location: ../vistasAdmin/gestAsig.php?num=1&buscar= ");
+            header("Location: ../vistasAdmin/gestAsig.php?numA=1&buscarA= ");
         }else{
             if(isset($_POST['editar'])){
                 echo '<script languaje = "javascript"> '

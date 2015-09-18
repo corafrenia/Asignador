@@ -1,30 +1,30 @@
 <?php
-     session_start();
+    session_start();
     include ("../procesos/conexion.php");
     if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
-        $pagina=$_GET['num'];
-        if(isset($_GET['buscar'])){
-            $buscar=$_GET['buscar'];
+        $pagina=$_GET['numA'];
+        if(isset($_GET['buscarA'])){
+            $buscarA=$_GET['buscarA'];
             
-                $rst_asignaturas= mysqli_query($connect, "SELECT * FROM asignaturas WHERE clave='".$buscar."' OR asignatura='".$buscar."' OR inscritos='".$buscar."'");
+                $rst_asignaturas= mysqli_query($connect, "SELECT * FROM asignaturas WHERE clave='".$buscarA."' OR asignatura='".$buscarA."' OR inscritos='".$buscarA."'");
                 $total_registros= mysqli_num_rows($rst_asignaturas);
 
                 $registros=10;
-                $pagina=$_GET['num'];
+                $pagina=$_GET['numA'];
                 if(is_numeric($pagina)){
                     $inicio=(($pagina-1)*$registros);
                 }
                 else{
                     $inicio=0;
                 }
-                $query=  mysqli_query($connect, "SELECT * FROM asignaturas WHERE clave='".$buscar."' OR asignatura='".$buscar."' OR inscritos='".$buscar."' LIMIT $inicio, $registros");
+                $query=  mysqli_query($connect, "SELECT * FROM asignaturas WHERE clave='".$buscarA."' OR asignatura='".$buscarA."' OR inscritos='".$buscarA."' LIMIT $inicio, $registros");
             
         }else{
-            if(empty($_GET['buscar'])){
+            if(empty($_GET['buscarA'])){
                 $rst_asignaturas= mysqli_query($connect, "SELECT * FROM asignaturas ORDER BY asignatura");
                 $total_registros= mysqli_num_rows($rst_asignaturas);
                 $registros=10;
-                $pagina=$_GET['num'];
+                $pagina=$_GET['numA'];
                 if(is_numeric($pagina)){
                     $inicio=(($pagina-1)*$registros);
                 }
@@ -62,12 +62,12 @@
                     <a id="regresar" href="../vistasAdmin/administrador.php"></a>Gestión de Recursos y Mobiliario.</div>
             <nav>
                 <ul>
-                    <li><a class="uno" title="seg" href="../vistasAdmin/segAdmon.php">Seguridad</a></li>
-                    <li><a class="dos" title="aulas" href="../vistasAdmin/gestRec.php?num=1&buscar= ">Gestion de recursos y mobiliario</a></li>
-                    <li><a class="tres" title="asignaturas" href="../vistasAdmin/gestAsig.php?num=1&buscar= ">Gestion de Asignaturas</a></li>
-                    <li><a class="cuatro" title=mestros" href="">Gestion de Catedráticos</a></li>
-                    <li><a class="cinco" title="horarios" href="">Gestion de horarios</a></li>
-                    <li><a class="seis" title="usuarios" href="">Gestion de usuarios</a></li>
+                    <li><a class="uno" title="Seguridad" href="../vistasAdmin/segAdmon.php">Seguridad</a></li>
+                    <li><a class="dos" title="Gestion de recursos y mobiliario" href="../vistasAdmin/gestRec.php?num=1&buscar= ">Gestion de recursos y mobiliario</a></li>
+                    <li><a class="tres" title="Gestion de Asignaturas" href="../vistasAdmin/gestAsig.php?numA=1&buscarA= ">Gestion de Asignaturas</a></li>
+                    <li><a class="cuatro" title="Gestion de Catedráticos" href="">Gestion de Catedráticos</a></li>
+                    <li><a class="cinco" title="Gestion de horarios" href="">Gestion de horarios</a></li>
+                    <li><a class="seis" title="Gestion de usuarios" href="">Gestion de usuarios</a></li>
                 </ul>
             </nav> 
         </header>
@@ -79,8 +79,8 @@
                 <form name="busca" method="get" action="../vistasAdmin/gestAsig.php">
                 <tr>
                     <td colspan="4"><img class="imgbuscar" src="../img/buscar.png"  title="Buscar..."/>
-                        <input type="hidden" name="num" value="1"/>
-                        <input type="search" value="<?=$_GET['buscar']?>" name="buscar" class="buscar" title="Buscar..."/>
+                        <input type="hidden" name="numA" value="1"/>
+                        <input type="search" value="<?=$_GET['buscarA']?>" name="buscarA" class="buscar" title="Buscar..."/>
                     </td>
                     <td colspan="2">Cantidad de registros: <?=$total_registros?></td>
                 </tr>
@@ -125,10 +125,10 @@
              <?php
                         }
                             
-                        }else{
+                }else{
                             
-                            echo "<tr><td colspan='6' align='center'><ul>No hay registros.</ul></td></tr>";
-                        }
+                    echo "<tr><td colspan='6' align='center'><ul>No hay registros.</ul></td></tr>";
+                }
                     
                     
                     ?>               
@@ -136,17 +136,17 @@
                     <td colspan="6" align="center">
         <?php
         if($pagina>1){
-            echo "&nbsp;<a href='../vistasAdmin/gestAsig.php?num=".($pagina-1)."&buscar=".$_GET['buscar']."' class=anterior></a>&nbsp;";
+            echo "&nbsp;<a href='../vistasAdmin/gestAsig.php?numA=".($pagina-1)."&buscarA=".$_GET['buscarA']."' class=anterior></a>&nbsp;";
         }
             for($cont=1; $cont<=$paginas;$cont++){
                 if($cont==$pagina){
                     echo " ".$cont ." ";
                 }else{
-                    echo "&nbsp;<a href='../vistasAdmin/gestAsig.php?num=".$cont."&buscar=".$_GET['buscar']."' class=numero>$cont</a>&nbsp;";
+                    echo "&nbsp;<a href='../vistasAdmin/gestAsig.php?numA=".$cont."&buscarA=".$_GET['buscarA']."' class=numero>$cont</a>&nbsp;";
                 }
             }
         if($pagina<$paginas){
-            echo "&nbsp;<a href='../vistasAdmin/gestAsig.php?num=".($pagina+1)."&buscar=".$_GET['buscar']."'class=posterior></a>&nbsp;";
+            echo "&nbsp;<a href='../vistasAdmin/gestAsig.php?numA=".($pagina+1)."&buscarA=".$_GET['buscarA']."'class=posterior></a>&nbsp;";
         }
         ?>
                     </td>

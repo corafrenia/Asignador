@@ -32,18 +32,18 @@
                         mysqli_query($connect, "UPDATE usuarios SET psw='".$pswNuevo."' WHERE id='".$id."'") or die (mysqli_errno());
                         //enviar correo-------------------------------
                         echo '<script> alert("Su contraseña ha sido modificada satisfactoriamente. En un momento más recibirá un correo erectrónico confirmando el cambio de contraseña."); </script>';
-                        echo '<script> window.location = "../vistasGen/seguridad.php"; </script>';
+                        echo '<script> window.location = "../vistasAdmin/segAdmon.php"; </script>';
                     }else{
                         echo '<script> alert("Las cuentas de correo no coinciden. Rectificar e-mail."); </script>';
-                        echo '<script> window.location = "../vistasGen/seguridad.php"; </script>';
+                        echo '<script> window.location = "../vistasAdmin/segAdmon.php.php"; </script>';
                     }
                 }else{
                     echo '<script> alert("Las contraseñas no coinciden. Rectificar nueva contraseña."); </script>';
-                    echo '<script> window.location = "../vistasGen/seguridad.php"; </script>';
+                    echo '<script> window.location = "../vistasAdmin/segAdmon.php"; </script>';
                 }
             }else{
                 echo '<script> alert("La contraseña actual de su cuenta es incorrecta. Vuelva a intentarlo o comuníquese con el administrador."); </script>';
-                echo '<script> window.location = "../vistasGen/seguridad.php"; </script>';
+                echo '<script> window.location = "../vistasAdmin/segAdmon.php"; </script>';
             }
         }
         ?>

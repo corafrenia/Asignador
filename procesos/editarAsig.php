@@ -46,7 +46,7 @@
             
             $query = mysqli_query($connect, "UPDATE asignaturas SET clave='".$clave."', asignatura='".$asignatura."', inscritos='".$inscritos."' WHERE id='".$id."'");
             echo '<script> alert("El registro ha sido modificado satisfactoriamente."); </script>';
-            echo '<script>opener.location.href="../vistasAdmin/gestAsig.php?num=1&buscar= ";</script>'; 
+            echo '<script>opener.location.href="../vistasAdmin/gestAsig.php?numA=1&buscarA= ";</script>'; 
             echo '<script>opener.window.location.reload();</script>';
             echo '<script> window.close(); </script>';
         }
