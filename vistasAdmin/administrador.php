@@ -16,13 +16,13 @@
             <section class="encabezado">
                 <div id="barra" >Universidad Veracruzana</div>
             </section>
-            <div id="sesion"><p>Ha iniciado sesión: <?php echo $_SESSION['usuario']; ?>.<br><a href="../procesos/logout.php">Cerrar Sesión.</a></p></div>
+            <div id="sesion"><p>Ha iniciado sesión: <?php echo $_SESSION['usuario']; ?>.<br><a href="../procesos/logout.php"><img src="../img/logout.png" /></a></p></div>
                 <div id="fac">
                     <a href="" id="regresar" href="vistasAdmin/administrador.php"></a>Gestión de Asignación de Aulas.</div>
             <nav>
                 <ul>
-                    <li><a class="uno" title="seg" href="../vistasGen/seguridad.php">Seguridad</a></li>
-                    <li><a class="dos" title="aulas" href="../vistasAdmin/gestRec.php">Gestion de recursos y mobiliario</a></li>
+                    <li><a class="uno" title="seg" href="../vistasAdmin/segAdmon.php">Seguridad</a></li>
+                    <li><a class="dos" title="aulas" href="../vistasAdmin/gestRec.php?num=1&buscar= ">Gestion de recursos y mobiliario</a></li>
                     <li><a class="tres" title="asignaturas" href="">Gestion de asignaturas</a></li>
                     <li><a class="cuatro" title=mestros" href="">Gestion de Catedráticos</a></li>
                     <li><a class="cinco" title="horarios" href="">Gestion de horarios</a></li>

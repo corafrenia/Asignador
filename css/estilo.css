@@ -131,6 +131,7 @@ nav ul li a:hover {
 article{
     margin: 20px auto;
     font-family: sans-serif, Arial, 'Gill Sans', 'Trebuchet MS', 'Segoe UI';
+    font-size: 10px;
 }
 
 article #formulario table{
@@ -190,16 +191,6 @@ article #formulario1{
 }
 /*Tabla de gestion de recursos*/
 
-.botonv{
-    background:#EBF4FA;
-    border:0;
-    color:#000;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    -o-border-radius:3px;
-    border-radius:3px; 
-}
-
 .gestion{
     background:#063;
     border:0;
@@ -215,18 +206,25 @@ article #tabla {
     border-collapse: separate;
     border: #EBF4FA 1px solid;
 }
+
 article #tabla th{
     background: #EBF4FA;
     width: 177px;
+    padding: 5px;
+    font-size: 14px;
+    
 }
 
 article #tabla td{
     padding: 5px;
+    font-size: 14px;
 }
 
 article #tabla tr, td{
     border: #EBF4FA 1px solid;
 }
+
+
 
 .imgbuscar{
     width: 25px;
@@ -260,4 +258,33 @@ article #tabla tr, td{
     -moz-border-radius:3px;
     -o-border-radius:3px;
     border-radius:3px;
+}
+
+.anterior{
+    background-image: url("../img/boton-atras.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
+
+.posterior{
+    background-image: url("../img/boton-go.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+}
+.numero{
+    background:#003366;
+    width: 30px;
+    height: 30px;
+    color:#fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -o-border-radius:3px;
+    border-radius:3px; 
+    display: inline-block;
+    text-align: center;
+    text-align-last: center;
 }
