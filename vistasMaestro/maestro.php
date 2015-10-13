@@ -20,8 +20,8 @@
                     <a href="" id="regresar" href="../index.php"></a>Sesión Maestro.</div>
             <nav>
                 <ul>
-                    <li><a class="uno" title="seg" href="../vistasGen/seguridad.php">Seguridad</a></li>
-                    <li><a class="dos" title="aulas" href="">Asignacion de Aulas</a></li>
+                    <li><a class="uno" title="seg" href="../vistasMaestro/segMaes.php">Seguridad</a></li>
+                    <li><a class="dos" title="aulas" href="../vistasMaestro/RegMaterias.php">Registro de Asignaturas</a></li>
                     <li><a class="tres" title="" href="">Horarios Docentes</a></li>
                 </ul>
             </nav> 

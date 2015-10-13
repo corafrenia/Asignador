@@ -24,9 +24,9 @@
                     <li><a class="uno" title="seg" href="../vistasAdmin/segAdmon.php">Seguridad</a></li>
                     <li><a class="dos" title="aulas" href="../vistasAdmin/gestRec.php?num=1&buscar= ">Gestion de recursos y mobiliario</a></li>
                     <li><a class="tres" title="asignaturas" href="../vistasAdmin/gestAsig.php?numA=1&buscarA= ">Gestion de asignaturas</a></li>
-                    <li><a class="cuatro" title=mestros" href="">Gestion de Catedráticos</a></li>
-                    <li><a class="cinco" title="horarios" href="">Gestion de horarios</a></li>
-                    <li><a class="seis" title="usuarios" href="">Gestion de usuarios</a></li>
+                    <li><a class="cuatro" title=mestros" href="../vistasAdmin/gestMaes.php?num=1&buscar= ">Gestion de Catedráticos</a></li>
+                    <li><a class="cinco" title="horarios" href="../vistasAdmin/gestHorarios.php?num=1&buscar= ">Gestion de horarios</a></li>
+                    <li><a class="seis" title="usuarios" href="../vistasAdmin/gestUser.php?num=1&buscar= ">Gestion de usuarios</a></li>
                 </ul>
             </nav> 
         </header>

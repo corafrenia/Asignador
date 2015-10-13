@@ -1,7 +1,7 @@
 <?php
     session_start();
     include ("../procesos/conexion.php");
-    if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
+    if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 2){
 ?>
 <!DOCTYPE>
 <html>
@@ -20,20 +20,17 @@
             </section>
             <div id="sesion"><p>Ha iniciado sesión: <?php echo $_SESSION['usuario']; ?>.<br><a href="../procesos/logout.php"><img src="../img/logout.png" /></a></p></div>
                 <div id="fac">
-                    <a id="regresar" href="../vistasAdmin/administrador.php"></a>Seguridad.</div>
+                    <a id="regresar" href="../vistasMaestro/maestro.php"></a>Seguridad.</div>
             <nav>
                 <ul>
-                    <li><a class="uno" title="seg" href="../vistasAdmin/segAdmon.php">Seguridad</a></li>
-                    <li><a class="dos" title="aulas" href="../vistasAdmin/gestRec.php?num=1&buscar= ">Gestion de recursos y mobiliario</a></li>
-                    <li><a class="tres" title="asignaturas" href="../vistasAdmin/gestAsig.php?numA=1&buscarA= ">Gestion de asignaturas</a></li>
-                    <li><a class="cuatro" title=mestros" href="../vistasAdmin/gestMaes.php?num=1&buscar= ">Gestion de Catedráticos</a></li>
-                    <li><a class="cinco" title="horarios" href="../vistasAdmin/gestHorarios.php?num=1&buscar= ">Gestion de horarios</a></li>
-                    <li><a class="seis" title="usuarios" href="../vistasAdmin/gestUser.php?num=1&buscar= ">Gestion de usuarios</a></li>
+                    <li><a class="uno" title="seg" href="../vistasMaestro/segMaes.php">Seguridad</a></li>
+                    <li><a class="dos" title="aulas" href="../vistasMaestro/RegMaterias.php">Registro de Asignaturas</a></li>
+                    <li><a class="tres" title="" href="">Horarios Docentes</a></li>
                 </ul>
             </nav> 
         </header>
         <article>
-            <form action="../procesos/Admon/procesoContra.php" method="post" id="formulario1" >
+            <form action="../procesos/Maestro/procesoContraMaes.php" method="post" id="formulario1" >
                 <table id="tabla">
                     <tr>
                         <td>Ingrese su contraseña actual:</td>

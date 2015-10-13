@@ -18,7 +18,7 @@
                 $row = mysqli_fetch_array($query);
                 $_SESSION['usuario'] = $row['usuario'];
 		$_SESSION['psw'] = $row['psw'];
-		$_SESSION['id'] = $row['id'];
+		
 		$_SESSION['tipo'] = $row['tipo'];
                 if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
                     echo 'Iniciando sesión para '. $_SESSION["usuario"] . '<p>';

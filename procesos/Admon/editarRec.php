@@ -1,17 +1,17 @@
 
 <?php
      session_start();
-    include ("../procesos/conexion.php");
+    include ("../conexion.php");
     if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
-            $id= $_GET['id'];
-            $mostrar="SELECT * FROM salones WHERE id = '".$id."'";
+            $salon= $_GET['salon'];
+            $mostrar="SELECT * FROM salones WHERE salon = '".$salon."'";
             $query= mysqli_query($connect, $mostrar);
             $row = mysqli_fetch_array($query);
 ?>
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../css/estilo.css" />
+        <link rel="stylesheet" href="../../css/estilo.css" />
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="http://www.uv.mx/favicon.ico" type="image/x-icon" />
         <title>Modificar Registro - UV</title>
@@ -25,7 +25,7 @@
                 </tr>
                 <tr>
                     <td>Salón:</td>
-                    <td><input name="salon" class="campos" type="text" value="<?php echo $row['salon']; ?>" /></td>
+                    <td><input name="salon" class="campos" type="text" value="<?php echo $row['salon']; ?>" readonly/></td>
                     <td><input name="guardarM" class="boton" type="submit" value="Guardar" onclick="return confirm('Al guardar se almacenarán los nuevos cambios. ¿Esta seguro que desea modificar este registro?');"</td>
                 </tr>
                 <tr>
@@ -59,9 +59,9 @@
             $eq_mm = $_POST['eq_mm']; 
             $observaciones = $_POST['observaciones']; 
             
-            $query = mysqli_query($connect, "UPDATE salones SET salon='".$salon."', hub_salon='".$hub_salon."', capacidad='".$capacidad."', otro_mov='".$otro_mov."', eq_mm='".$eq_mm."', observaciones='".$observaciones."' WHERE id='".$id."'");
+            $query = mysqli_query($connect, "UPDATE salones SET hub_salon='".$hub_salon."', capacidad='".$capacidad."', otro_mov='".$otro_mov."', eq_mm='".$eq_mm."', observaciones='".$observaciones."' WHERE salon='".$salon."'");
             echo '<script> alert("El registro ha sido modificado satisfactoriamente."); </script>';
-            echo '<script>opener.location.href="../vistasAdmin/gestRec.php";</script>'; 
+            echo '<script>opener.location.href="../../vistasAdmin/gestRec.php";</script>'; 
             echo '<script>opener.window.location.reload();</script>';
             echo '<script> window.close(); </script>';
         }
@@ -75,6 +75,6 @@
     }
     else{
         echo '<script> alert("Acceso denegado. Debe iniciar sesión."); </script>';
-        echo '<script> window.location = "../index.php"; </script>';
+        echo '<script> window.location = "../../index.php"; </script>';
     }
 ?>

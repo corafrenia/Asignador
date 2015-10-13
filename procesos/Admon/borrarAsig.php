@@ -4,8 +4,8 @@ include ("../procesos/conexion.php");
 if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
        
         if(isset($_POST['eliminar'])){
-            $id= $_GET['id'];
-            $delete = "DELETE FROM asignaturas WHERE id = '".$id."'";
+            $clave= $_GET['clave'];
+            $delete = "DELETE FROM asignaturas WHERE clave = '".$clave."'";
             mysqli_query($connect, $delete);
             header("Location: ../vistasAdmin/gestAsig.php?numA=1&buscarA= ");
         }else{

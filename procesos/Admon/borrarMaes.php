@@ -4,10 +4,10 @@ include ("../procesos/conexion.php");
 if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
        
         if(isset($_POST['eliminar'])){
-            $id= $_GET['id'];
-            $delete = "DELETE FROM salones WHERE id = '".$id."'";
+            $id= $_GET['clave_maes'];
+            $delete = "DELETE FROM maestros WHERE clave_maes = '".$id."'";
             mysqli_query($connect, $delete);
-            header("Location: ../vistasAdmin/gestRec.php?num=1&buscar= ");
+            header("Location: ../vistasAdmin/gestMaes.php?num=1&buscar= ");
         }else{
             if(isset($_POST['editar'])){
                 echo '<script languaje = "javascript"> '

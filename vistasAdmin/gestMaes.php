@@ -4,8 +4,8 @@
     if (isset($_SESSION['usuario']) && $_SESSION['tipo'] == 1){
         if(isset($_GET['buscar'])){
             $buscar=$_GET['buscar'];
-            $rst_salones= mysqli_query($connect, "SELECT * FROM salones WHERE salon='".$buscar."' OR hub_salon='".$buscar."' OR capacidad='".$buscar."' OR otro_mov LIKE '%".$buscar."%' OR eq_mm LIKE '%".$buscar."%' OR observaciones LIKE '%".$buscar."%'");
-            $total_registros= mysqli_num_rows($rst_salones);
+            $rst_maestros= mysqli_query($connect, "SELECT * FROM maestros WHERE clave_maes='".$buscar."' OR maestro LIKE '%".$buscar."%'")or die("El Query está mal");
+            $total_registros= mysqli_num_rows($rst_maestros);
             $registros=10;
             $pagina=$_GET['num'];
             if(is_numeric($pagina)){
@@ -14,8 +14,8 @@
             else{
                 $inicio=0;
             }
-            $query=  mysqli_query($connect, "SELECT * FROM salones WHERE salon='".$buscar."' OR hub_salon='".$buscar."' OR capacidad='".$buscar."' OR otro_mov LIKE '%".$buscar."%' OR eq_mm LIKE '%".$buscar."%' OR observaciones LIKE '%".$buscar."%' LIMIT $inicio, $registros");
-        }                      
+            $query=  mysqli_query($connect, "SELECT * FROM maestros WHERE clave_maes='".$buscar."' OR maestro LIKE '%".$buscar."%' LIMIT $inicio, $registros");
+        }                       
         $paginas=  ceil($total_registros/$registros);
         $rows = mysqli_num_rows($query);
 ?>
@@ -29,7 +29,7 @@
         
         <script languaje = "javascript">
             function abrir(url){
-                window.open(url, "Modificar Registro de Salones.", "width=500, heigth=300, top=200, left=200");
+                window.open(url, "Modificar Registro de Maestro.", "width=500, heigth=300, top=200, left=200");
             }
         </script>
     </head>
@@ -40,7 +40,7 @@
             </section>
             <div id="sesion"><p>Ha iniciado sesión: <?php echo $_SESSION['usuario']; ?>.<br><a href="../procesos/logout.php"><img src="../img/logout.png" /></a></p></div>
                 <div id="fac">
-                    <a id="regresar" href="../vistasAdmin/administrador.php"></a>Gestión de Recursos y Mobiliario.</div>
+                    <a id="regresar" href="../vistasAdmin/administrador.php"></a>Gestión de Catedráticos.</div>
             <nav>
                 <ul>
                     <li><a class="uno" title="seg" href="../vistasAdmin/segAdmon.php">Seguridad</a></li>
@@ -57,7 +57,7 @@
             
            
             <table id="tabla" align="center">
-                <form method="get" action="../vistasAdmin/gestRec.php">
+                <form name="busca" method="get" action="../vistasAdmin/gestMaes.php">
                 <tr>
                     <td colspan="5"><img class="imgbuscar" src="../img/buscar.png"  title="Buscar..."/><input type="hidden" name="num" value="1"/>
                         <input type="search" value="<?=$_GET['buscar']?>" name="buscar" class="buscar" title="Buscar..."/>
@@ -67,28 +67,19 @@
                  </form>
                 <tr>
                     
-                    <th>Salón</th>
-                    <th>Hubicación</th>
-                    <th>Capacidad</th>
-                    <th>Otro Mobiliario</th>
-                    <th>Equipo Multimedia</th>
-                    <th>Observaciones</th>
-               
+                    <th>Clave</th>
+                    <th>Maestros</th>
                 </tr>
                  <tr>
                      
-                    <th>Ingresar salones</th>
+                    <th>Ingresar Catedrático</th>
                 </tr>
-                <form action="../procesos/Admon/metGestRec.php" method="post">
+                <form action="../procesos/metGestMaes.php" method="post">
                 <tr>
                     
-                    <td><input type="text" name="salon" class="camposG" required/></td>
-                    <td><input type="text" name="hub_salon" class="camposG" required/></td>
-                    <td><input type="number" name="capacidad" class="camposG" required/></td>
-                    <td><input type="text" name="otro_mov" class="camposG" required/></td>
-                    <td><input type="text" name="eq_mm" class="camposG" required/></td>
-                    <td><input type="text" name="observaciones" class="camposG" required/></td>
-                    <td id="mas"><input type="submit" name="guardar" class="gestion" value="+" title="Guardar Registro"/></td>
+                    <td><input type="text" name="clave_maes" class="camposG" required/></td>
+                    <td><input type="text" name="maestro" class="camposG" required/></td>
+                    <td><input type="submit" name="guardar" class="gestion" value="+" title="Guardar Registro"/></td>
                 </tr>
                 </form>
                 <?php                       
@@ -98,16 +89,12 @@
                     ?>
                 <tr>
                     
-                    <td><strong><?=$row['salon']?></strong></td>
-                    <td><?=$row['hub_salon']?></td> 
-                    <td><?=$row['capacidad']?></td> 
-                    <td><?=$row['otro_mov']?></td> 
-                    <td><?=$row['eq_mm']?></td>
-                    <td><?=$row['observaciones']?></td>
+                    <td><strong><?=$row['clave_maes']?></strong></td>
+                    <td><?=$row['maestro']?></td> 
                 <form method="post" > 
-                <td><input type="submit" name="editar" class="gestion" value="_/" title="Modificar Registro" onclick="abrir('../procesos/Admon/editarRec.php?salon=<?=$row['salon']?>')" /></td>
+                <td><input type="submit" name="editar" class="gestion" value="_/" title="Modificar Registro" onclick="abrir('../procesos/editarMaes.php?clave_maes=<?=$row['clave_maes']?>')" /></td>
                 </form>
-                <form method="post" action="../procesos/Admon/borrarRec.php?salon=<?=$row['salon']?>">
+                <form method="post" action="../procesos/borrarMaes.php?clave_maes=<?=$row['clave_maes']?>">
                     <td><input type="submit" name="eliminar" class="gestion" value="-" title="Eliminar Registro" onclick="return confirm('¿Esta seguro de querer eliminar este registro?');"/></td>
                 </form>
                 </tr>
@@ -125,17 +112,17 @@
                     <td colspan="9" align="center">
         <?php
         if($pagina>1){
-            echo "&nbsp;<a href='../vistasAdmin/gestRec.php?num=".($pagina-1)."&buscar=".$_GET['buscar']."' class=anterior></a>&nbsp;";
+            echo "&nbsp;<a href='../vistasAdmin/gestMaes.php?num=".($pagina-1)."&buscar=".$_GET['buscar']."' class=anterior></a>&nbsp;";
         }
             for($cont=1; $cont<=$paginas;$cont++){
                 if($cont==$pagina){
                     echo " ".$cont ." ";
                 }else{
-                    echo "&nbsp;<a href='../vistasAdmin/gestRec.php?num=".$cont."&buscar=".$_GET['buscar']."' class=numero>$cont</a>&nbsp;";
+                    echo "&nbsp;<a href='../vistasAdmin/gestMaes.php?num=".$cont."&buscar=".$_GET['buscar']."' class=numero>$cont</a>&nbsp;";
                 }
             }
         if($pagina<$paginas){
-            echo "&nbsp;<a href='../vistasAdmin/gestRec.php?num=".($pagina+1)."&buscar=".$_GET['buscar']."'class=posterior></a>&nbsp;";
+            echo "&nbsp;<a href='../vistasAdmin/gestMaes.php?num=".($pagina+1)."&buscar=".$_GET['buscar']."'class=posterior></a>&nbsp;";
         }
         ?>
                     </td>
